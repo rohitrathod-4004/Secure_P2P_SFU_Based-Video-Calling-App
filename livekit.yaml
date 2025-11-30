@@ -1,0 +1,22 @@
+# LiveKit Server Configuration
+port: 7880
+rtc:
+  port_range_start: 50000
+  port_range_end: 60000
+  use_external_ip: false
+  
+redis:
+  # Redis is optional for single-instance deployments
+  
+keys:
+  # API Key and Secret for token generation
+  devkey: APIfhGwPxQVnrKL
+  secret: c2a4347304d579dcf6c84d8d54a54db7c317778ddcf91d511fee7988f17bd38b
+  
+logging:
+  level: info
+  
+room:
+  auto_create: true
+  empty_timeout: 300
+  max_participants: 10

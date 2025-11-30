@@ -1,0 +1,42 @@
+services:
+  # Backend Server
+  - type: web
+    name: webrtc-server
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: CLIENT_URL
+        sync: false
+      - key: LIVEKIT_API_KEY
+        sync: false
+      - key: LIVEKIT_API_SECRET
+        sync: false
+
+  # Frontend Client
+  - type: web
+    name: webrtc-client
+    runtime: static
+    region: oregon
+    plan: free
+    rootDir: client
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_SERVER_URL
+        sync: false
+      - key: VITE_LIVEKIT_WS_URL
+        sync: false
+      - key: VITE_TWILIO_STUN_URL
+        value: stun:global.stun.twilio.com:3478
+      - key: VITE_TWILIO_TURN_URL
+        sync: false
+      - key: VITE_TWILIO_TURN_USERNAME
+        sync: false
+      - key: VITE_TWILIO_TURN_CREDENTIAL
+        sync: false

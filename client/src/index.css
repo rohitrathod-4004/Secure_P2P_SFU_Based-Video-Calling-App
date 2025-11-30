@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-['Inter',sans-serif] bg-slate-950 text-slate-100;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-medium rounded-lg 
+           hover:from-indigo-700 hover:to-indigo-600 active:scale-95 
+           focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+           transition-all duration-200 shadow-lg shadow-indigo-500/30;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-700 text-slate-100 font-medium rounded-lg 
+           hover:bg-slate-600 active:scale-95 
+           focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+           transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg 
+           text-slate-100 placeholder-slate-500
+           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-700;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-p2p {
+    @apply badge bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .badge-sfu {
+    @apply badge bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+}
+
+/* Video element styling */
+video {
+  @apply rounded-lg bg-slate-900;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600;
+}
